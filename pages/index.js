@@ -52,23 +52,23 @@ export default function Home({guitarras,posts,curso}) {
 export async function getStaticProps(){
 
   
-  const urlGuitarras = await (`${process.env.API_URL}/guitarras?populate=imagen`)
-  const urlPosts = await (`${process.env.API_URL}/posts?populate=imagen`)
-  const urlCurso = await (`${process.env.API_URL}/curso?populate=imagen`)
- 
+  const urlGuitarras = `${process.env.API_URL}/guitarras?populate=imagen`;
+  const urlPosts = `${process.env.API_URL}/posts?populate=imagen`;
+  const urlCurso = `${process.env.API_URL}/curso?populate=imagen`;
+
   // console.log(urlGuitarras)
   // console.log(urlPosts)
-  const [ resGuitarras , resPosts, resCurso ] = await Promise.all([
+  const [resGuitarras, resPosts, resCurso] = await Promise.all([
     fetch(urlGuitarras),
     fetch(urlPosts),
-    fetch(urlCurso)
-  ])
+    fetch(urlCurso),
+  ]);
 
   const [ {data:guitarras} , {data:posts}, {data:curso} ] = await Promise.all ([
     resGuitarras.json(),
     resPosts.json(),
     resCurso.json()
-  ])
+  ]);
 
   return {
       props:{
