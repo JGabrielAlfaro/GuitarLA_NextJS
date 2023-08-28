@@ -1,0 +1,78 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+
+:root {
+  --primary: #e99401;
+  --black: #262626;
+  --white: #FFF;
+  --fuente-principal: 'Outfit', sans-serif;
+}
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 2rem;
+  font-family: var(--fuente-principal);
+  line-height: 1.5;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+[class*="contenedor"], 
+main {
+  width: min(95%, 120rem);
+  margin: 3rem auto;
+}
+[class*="heading"] {
+  font-size: 4rem;
+  text-align: center;
+  font-weight: 900;
+  color: var(--primary);
+  margin: 5rem 0;
+}
+
+.error, .error-enlace {
+  font-size: 2.4rem;
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.error-enlace {
+  font-size: 1.8rem;
+  display: block;
+  text-decoration: none;
+  color: var(--primary);
+}
